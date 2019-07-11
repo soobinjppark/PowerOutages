@@ -23,7 +23,7 @@ class PowerOutage(scrapy.Spider):
         }
     
     def states(self, response):
-        return response.selector.xpath('//div[@class="row"]/div/h1/text()').get()
+        return response.selector.xpath('//div[@class="row"]/div/h1/text()').get().strip()
 
     def electric_providers(self, response):
         entries = []
